@@ -1,21 +1,22 @@
 package basic;
 
-public class StreamsPart1 {
+import java.util.List;
+
+public class StreamsPart2 {
 
     public static void main(String[] args) {
-        example1();
+
+        // what is the output?
+        List<String> myStrings = List.of("apple", "pineapple", "cherries", "pear");
+
+        myStrings.stream()
+                .filter(fruit -> fruit.startsWith("p"))
+                .map(fruit -> toUpperAndPrint(fruit));
     }
 
-    public static void example1() {
+    public static String toUpperAndPrint(String fruit) {
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Running code in a thread");
-            }
-        };
-
-        Thread thread = new Thread(runnable);
-        thread.start();
+        System.out.println(fruit + ", ");
+        return fruit;
     }
 }
