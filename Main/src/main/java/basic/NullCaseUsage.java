@@ -6,13 +6,13 @@ import lombok.Data;
 
 import java.util.List;
 
-public class OptionalUsage {
+public class NullCaseUsage {
 
 
     @Data
     @AllArgsConstructor
     @Builder
-    public static class Person {
+    class Person {
         private String name;
         private String level;
     }
@@ -20,7 +20,7 @@ public class OptionalUsage {
     @Data
     @AllArgsConstructor
     @Builder
-    public static class Book {
+    class Book {
 
         private String name;
         private Person reviewer;
@@ -30,7 +30,7 @@ public class OptionalUsage {
 
         Book myBook = Book.builder()
                 .name("My Book")
-                .reviewer(null)
+                .reviewer(null) // Possible null pointer exception
                 .build();
 
         Book anotherBook = Book.builder()
@@ -40,11 +40,12 @@ public class OptionalUsage {
                         .build())
                 .build();
 
-        System.out.println(getReviewerName(myBook));
+        System.out.println(getReviewerName(myBook)); // Null pointer exception HERE! How to solve?
         System.out.println(getReviewerName(anotherBook));
     }
 
     public static String getReviewerName(Book book) {
+
         return book.getReviewer().getName();
     }
 

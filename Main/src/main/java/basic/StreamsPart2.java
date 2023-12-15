@@ -9,14 +9,6 @@ public class StreamsPart2 {
         // what is the output?
         List<String> myStrings = List.of("apple", "pineapple", "cherries", "pear");
 
-        myStrings.stream()
-                .filter(fruit -> fruit.startsWith("p"))
-                .map(fruit -> toUpperAndPrint(fruit));
-    }
-
-    public static String toUpperAndPrint(String fruit) {
-
-        System.out.println(fruit + ", ");
-        return fruit;
+        // Any exercise using the streams above
     }
 }

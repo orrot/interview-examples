@@ -10,7 +10,7 @@ public class StreamsPart1 {
             }
         };
 
-        Thread thread = new Thread(runnable);
-        thread.start();
+        // Create a Runnable implementation using a lambda exp
+        // (most of the time this same example but with a custom functional interface created during the interview)
     }
 }
